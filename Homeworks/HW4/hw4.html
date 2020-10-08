@@ -1,0 +1,207 @@
+<!--
+	File: ~/djrazmad/Homeworks/HW4/hw4.html
+	COMP.4610 Assignment: Updating HW2 with Boostrap
+	David Razmadze, UMass Lowell Computer Science, david_razmadze@student.uml.edu
+	Brief Description: The goal of this assignment was to update HW2 using Bootstrap. 
+	updated by DJR on October 8, 2020 at 11:00 AM
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>David's Website</title>
+
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      .navbar {
+        margin-bottom: 0;
+        border-radius: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVIGATION BAR  -->
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">David Razmadze</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li><a href="../../about.html">About</a></li>
+            <li class="dropdown">
+              <a
+                href="#"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Assignments <span class="caret"></span
+              ></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Homework 2</a></li>
+                <li><a href="#">Homework 3</a></li>
+                <li><a href="#">Homework 4</a></li>
+                <li><a href="#">Homework 5</a></li>
+                <li><a href="#">Homework 6</a></li>
+                <li><a href="#">Homework 7</a></li>
+                <li><a href="#">Homework 8</a></li>
+                <!-- <li role="separator" class="divider"></li> -->
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a
+                href="#"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >iOS Apps <span class="caret"></span
+              ></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://apps.apple.com/us/developer/david-razmadze/id1512076599"
+                    >Developer Page</a
+                  >
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://apps.apple.com/us/app/bpi-tracker/id1516201156"
+                    >BPI Tracker</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://apps.apple.com/us/app/easy-barcode-scan/id1526499744"
+                    >Easy Barcode Scan</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://apps.apple.com/us/app/northtrash/id1525262589"
+                    >North Trash</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://apps.apple.com/us/app/noteyy/id1517438052"
+                    >Noteyy</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://apps.apple.com/us/app/presidential-sounds/id1516692605"
+                    >Presidental Sounds</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- JUMBOTRON -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Welcome to David's Website.</h1>
+        <p>
+          This website was created to serve as an online portfolio for
+          <b>COMP.4610</b>
+          (Graphical User Interface Programming I) at the Unversity of
+          Massachusetts, Lowell.
+        </p>
+
+        <p>
+          This course introduces students to graphical user interfaces for
+          web-based environments using HTML, CSS, JavaScript, and jQuery. Fall
+          2020 GUI I is taught by Professor
+
+          <a href="http://www.cs.uml.edu/~wzhou/"> Wenjin Zhou. </a>
+        </p>
+
+        <p>
+          This is my first official web development class. I have used HTML and
+          CSS in the past but not for any school projects. I am also an iOS
+          Developer. If you'd like, you can check out my apps by pressing the
+          button below.
+        </p>
+
+        <a
+          href="https://apps.apple.com/us/developer/david-razmadze/id1512076599"
+          class="btn btn-primary"
+          >See David's Apps</a
+        >
+      </div>
+    </div>
+
+    <!-- Class Schedule 
+    https://www.w3schools.com/html/html_tables.asp
+    -->
+
+    <div class="container">
+      <h2>Fall 2020 Schedule</h2>
+      <table
+        class="table table-striped table-bordered table-hover table-condensed"
+      >
+        <tr>
+          <th>Course Number</th>
+          <th>Course Name</th>
+          <th>Professor</th>
+        </tr>
+        <tr class="success">
+          <td>COMP.4610</td>
+          <td>GUI Programming I</td>
+          <td>Wenjin Zhou</td>
+        </tr>
+        <tr class="success">
+          <td>COMP.2300</td>
+          <td>Introduction to Computer Security</td>
+          <td>Sashank Narain</td>
+        </tr>
+        <tr class="success">
+          <td>ARHI.1050</td>
+          <td>Comparative Arts</td>
+          <td>Julie Sawyer</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/js/boostrap.min.js"></script>
+  </body>
+</html>
