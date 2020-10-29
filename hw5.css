@@ -1,0 +1,55 @@
+/* 
+  File: ~/djrazmad/css/hw5.css
+  COMP.4610 Assignment: Multiplication Table
+  David Razmadze, UMass Lowell Computer Science, david_razmadze@student.uml.edu
+  Brief Description: This page displays a multiplication table based on user input to the form.
+  updated by DJR on October 29, 2020 at 7:00 PM
+*/
+
+#form {
+  background-color: #eeeeee;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+#errorMessage,
+.error {
+  color: red;
+}
+
+#multiplicationTable {
+  width: auto;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* Each cell styling  */
+
+#multiplicationTable td {
+  border: 2px solid #a1c0d6;
+  text-align: right;
+  background-color: white;
+  padding: 5px;
+  width: 30px;
+}
+
+/* Alternate cell styling  */
+#multiplicationTable td:nth-child(odd),
+#multiplicationTable tr:nth-child(odd) td {
+  background-color: #e4e6f7;
+}
+
+#multiplicationTable tbody tr:first-child td {
+  background-color: #a1c0d6;
+  color: white;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+}
+
+#multiplicationTable tbody tr td:first-child {
+  background-color: #a1c0d6;
+  color: white;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+}
