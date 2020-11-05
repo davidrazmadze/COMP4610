@@ -7,33 +7,17 @@
 */
 
 function readInput() {
-<<<<<<< HEAD
-=======
   // Clear table and error messages
   var table = "";
   document.getElementById("multiplicationTable").innerHTML = table;
   document.getElementById("errorMessage").innerHTML = "";
 
->>>>>>> b4eb6491cff2d3b6e8b8ba670cea15e109293332
   // Read Form values
   var xStart = parseInt(document.getElementById("xStartInput").value);
   var xEnd = parseInt(document.getElementById("xEndInput").value);
   var yStart = parseInt(document.getElementById("yStartInput").value);
   var yEnd = parseInt(document.getElementById("yEndInput").value);
 
-<<<<<<< HEAD
-  // Clear error message
-  document.getElementById("errorMessage").innerHTML = "";
-
-  // If any of the inputs are zero, don't create the table
-  if (xStart == "0" || xEnd == "0" || yStart == "0" || yEnd == "0") {
-    document.getElementById("errorMessage").innerHTML =
-      "Please enter a value other than 0 for your input.<br>";
-    return;
-  }
-
-  // Swap values if start is greater than end
-=======
   //////////////// Check for errors ////////////////
   // 1. If any of the inputs are empty, don't create the table
   if (!xStart || !xEnd || !yStart || !yEnd) {
@@ -57,7 +41,6 @@ function readInput() {
   }
 
   // 4.Swap values if start is greater than end
->>>>>>> b4eb6491cff2d3b6e8b8ba670cea15e109293332
   if (xStart > xEnd) {
     var temp = xStart;
     xStart = xEnd;
@@ -113,8 +96,6 @@ function resetInput() {
 function showExampleTable() {
   createTable(1, 10, 1, 10);
 }
-<<<<<<< HEAD
-=======
 
 // Keyboard input error checking
 
@@ -142,4 +123,3 @@ inputArray.forEach(function (element) {
     }
   });
 });
->>>>>>> b4eb6491cff2d3b6e8b8ba670cea15e109293332
