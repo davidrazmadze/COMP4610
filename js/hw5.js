@@ -19,28 +19,21 @@ function readInput() {
   var yEnd = parseInt(document.getElementById("yEndInput").value);
 
   //////////////// Check for errors ////////////////
-  // 1. If any of the inputs are empty, don't create the table
-  if (!xStart || !xEnd || !yStart || !yEnd) {
-    document.getElementById("errorMessage").innerHTML =
-      "One or more of the values you entered is empty.<br>Please make sure all values have been filled.<br>";
-    return;
-  }
-
-  // 2. Check for values greater than 60
+  // 1. Check for values greater than 60
   if (xStart > 60 || xEnd > 60 || yStart > 60 || yEnd > 60) {
     document.getElementById("errorMessage").innerHTML =
       "One or more of the values exceeds the limit.<br>Please make sure the values are between -60 and 60.";
     return;
   }
 
-  // 3. Check for values less than -60
+  // 2. Check for values less than -60
   if (xStart < -60 || xEnd < -60 || yStart < -60 || yEnd < -60) {
     document.getElementById("errorMessage").innerHTML =
       "One or more of the values exceeds the limit.<br>Please make sure the values are between -60 and 60.";
     return;
   }
 
-  // 4.Swap values if start is greater than end
+  // 3.Swap values if start is greater than end
   if (xStart > xEnd) {
     var temp = xStart;
     xStart = xEnd;
@@ -111,15 +104,6 @@ inputArray.forEach(function (element) {
   element.addEventListener("keydown", function (e) {
     if (invalidChars.includes(e.key)) {
       e.preventDefault();
-    }
-  });
-});
-
-// Prevent first character from being a zero
-inputArray.forEach(function (element) {
-  $(element).on("input", function () {
-    if (/^0/.test(this.value)) {
-      this.value = this.value.replace(/^0/, "");
     }
   });
 });
