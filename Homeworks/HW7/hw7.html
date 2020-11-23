@@ -1,0 +1,286 @@
+<!--
+	File: ~/djrazmad/Homeworks/HW7/hw7.html
+	COMP.4610 Assignment: Multiplication Table
+	David Razmadze, UMass Lowell Computer Science, david_razmadze@student.uml.edu
+	Brief Description: This page displays a multiplication table based on user input to the form. Added jQuery Validator and jQuery UI elements.
+	updated by DJR on November 23, 2020 at 5:00 PM
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- jQuery UI Styles -->
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+
+    <!-- Bootstrap -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../css/hw7.css" />
+    <style>
+      .navbar {
+        margin-bottom: 0;
+        border-radius: 0;
+      }
+    </style>
+    <title>Homework 7</title>
+  </head>
+
+  <body>
+    <!-- NAVIGATION BAR  -->
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../index.html">David Razmadze</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../about.html">About</a></li>
+            <li class="dropdown active">
+              <a
+                href="#"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Assignments <span class="caret"></span
+              ></a>
+              <ul class="dropdown-menu">
+                <li><a href="../../Homeworks/HW2/hw2.html">Homework 2</a></li>
+                <li><a href="../../Homeworks/HW3/index.html">Homework 3</a></li>
+                <li><a href="../../Homeworks/HW4/hw4.html">Homework 4</a></li>
+                <li><a href="../../Homeworks/HW5/hw5.html">Homework 5</a></li>
+                <li><a href="../../Homeworks/HW6/hw6.html">Homework 6</a></li>
+                <li class="active"><a href="../../Homeworks/HW7/hw7.html">Homework 7</a></li>
+                <li><a href="../../Homeworks/HW8/hw8.html">Homework 8</a></li>
+                <!-- <li role="separator" class="divider"></li> -->
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a
+                href="#"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >iOS Apps <span class="caret"></span
+              ></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://apps.apple.com/us/developer/david-razmadze/id1512076599"
+                    >Developer Page</a
+                  >
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://apps.apple.com/us/app/bpi-tracker/id1516201156"
+                    >BPI Tracker</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://apps.apple.com/us/app/easy-barcode-scan/id1526499744"
+                    >Easy Barcode Scan</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://apps.apple.com/us/app/northtrash/id1525262589"
+                    >North Trash</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://apps.apple.com/us/app/noteyy/id1517438052"
+                    >Noteyy</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://apps.apple.com/us/app/presidential-sounds/id1516692605"
+                    >Presidental Sounds</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- JUMBOTRON -->
+    <div class="container-fluid">
+      <div class="jumbotron">
+        <h1 class="text-center">Multiplication Table</h1>
+        <h2 class="text-center">
+          Using
+          <a href="https://jqueryvalidation.org/" target="_blank">
+            jQuery Validation</a
+          >
+          plugin and
+          <a href="https://jqueryui.com/" target="_blank">
+            jQuery User Interface</a
+          >
+        </h2>
+      </div>
+    </div>
+
+    <!-- FORM CONTAINER -->
+    <div class="container" id="form">
+      <p class="lead text-center">
+        Enter horizontal and vertical ranges to create a multiplication table.
+      </p>
+      <!-- FORM  -->
+      <form class="form" id="timesTableForm">
+        <div class="row">
+          <div class="form-group col-md-2">
+            <label for="xStartInput">X Start</label>
+            <input
+              type="number"
+              class="form-control"
+              id="xStartInput"
+              name="xStartInput"
+              required
+            />
+            <div id="xStartSlider"></div>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="xEndInput">X End</label>
+            <input
+              type="number"
+              class="form-control"
+              id="xEndInput"
+              name="xEndInput"
+              required
+            />
+            <div id="xEndSlider"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-2">
+            <label for="yStartInput">Y Start</label>
+            <input
+              type="number"
+              class="form-control"
+              id="yStartInput"
+              name="yStartInput"
+              required
+            />
+            <div id="yStartSlider"></div>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="yEndInput">Y End</label>
+            <input
+              type="number"
+              class="form-control"
+              id="yEndInput"
+              name="yEndInput"
+              required
+            />
+            <div id="yEndSlider"></div>
+          </div>
+        </div>
+
+        <!-- BUTTONS  -->
+        <p>
+          <button
+            type="submit"
+            class="btn btn-success"
+            name="button"
+            id="submitButton"
+          >
+            Submit
+          </button>
+
+          <button
+            type="reset"
+            class="btn btn-danger"
+            onclick="return resetInput();"
+            name="button"
+            id="resetButton"
+          >
+            Reset
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            id="closeAllTabsButton"
+          >
+            Close all tabs
+          </button>
+        </p>
+        <hr />
+      </form>
+
+      <!-- MULTIPLICATION TABLE  -->
+        <div class="myContainer">
+          <table id="multiplicationTable"></table> 
+        </div>
+
+    </div>
+
+    <!-- Tabs -->
+    <div class="container">
+      <h2 class="text-center" style="color: white;">Tabs</h2>
+      <div id="tabs" style="margin-top: 20px">
+        <ul id="tabs-list">
+      </div>
+    </div>
+    
+
+    <!-- Additional Space  -->
+    <div style="margin-bottom: 300px;"></div>
+
+    <!-- JavaScript Libraries + Files  -->
+
+    <!-- 1. jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- 2. jQuery Validate -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
+
+    <!-- 3. jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- 4. Bootstrap -->
+    <script src="../../js/bootstrap.min.js"></script>
+
+    <!-- 5. Homework 7 JavaScript file  -->
+    <script src="../../js/hw7.js"></script>
+  </body>
+</html>
+
