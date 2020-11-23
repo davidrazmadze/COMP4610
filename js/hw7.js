@@ -1,3 +1,10 @@
+/*
+	File: ~/djrazmad/js/hw7.js
+	COMP.4610 Assignment: Multiplication Table
+	David Razmadze, UMass Lowell Computer Science, david_razmadze@student.uml.edu
+	Brief Description: This page displays a multiplication table based on user input to the form. Added jQuery Validator and jQuery UI elements.
+	updated by DJR on November 23, 2020 at 5:00 PM
+*/
 const RANGE_START = -60;
 const RANGE_END = 60;
 // // // // // // // // // // // // // // //
