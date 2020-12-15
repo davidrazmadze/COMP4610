@@ -1,0 +1,209 @@
+<!--
+	File: ~/djrazmad/Homeworks/HW8/hw8.html
+	COMP.4610 Assignment: Multiplication Table
+	David Razmadze, UMass Lowell Computer Science, david_razmadze@student.uml.edu
+	Brief Description: This webpage simulates a shortened version of Scrabble.
+	updated by DJR on December 15, 2020 at 11:00 AM
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- jQuery UI Styles -->
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+
+    <!-- Bootstrap -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../css/hw8.css" />
+    <style>
+      .navbar {
+        margin-bottom: 0;
+        border-radius: 0;
+      }
+    </style>
+    <title>Homework 8</title>
+  </head>
+
+  <body>
+    <!-- NAVIGATION BAR  -->
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../index.html">David Razmadze</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../about.html">About</a></li>
+            <li class="dropdown active">
+              <a
+                href="#"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Assignments <span class="caret"></span
+              ></a>
+              <ul class="dropdown-menu">
+                <li><a href="../../Homeworks/HW2/hw2.html">Homework 2</a></li>
+                <li><a href="../../Homeworks/HW3/index.html">Homework 3</a></li>
+                <li><a href="../../Homeworks/HW4/hw4.html">Homework 4</a></li>
+                <li><a href="../../Homeworks/HW5/hw5.html">Homework 5</a></li>
+                <li><a href="../../Homeworks/HW6/hw6.html">Homework 6</a></li>
+                <li><a href="../../Homeworks/HW7/hw7.html">Homework 7</a></li>
+                <li class="active"><a href="#">Homework 8</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a
+                href="#"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >iOS Apps <span class="caret"></span
+              ></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://apps.apple.com/us/developer/david-razmadze/id1512076599"
+                    >Developer Page</a
+                  >
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://apps.apple.com/us/app/bpi-tracker/id1516201156"
+                    >BPI Tracker</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://apps.apple.com/us/app/easy-barcode-scan/id1526499744"
+                    >Easy Barcode Scan</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://apps.apple.com/us/app/northtrash/id1525262589"
+                    >North Trash</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://apps.apple.com/us/app/noteyy/id1517438052"
+                    >Noteyy</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://apps.apple.com/us/app/presidential-sounds/id1516692605"
+                    >Presidental Sounds</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- JUMBOTRON -->
+    <div class="container-fluid text-center">
+      <div class="jumbotron">
+        <h1>Scrabble</h1>
+        <hr />
+        <!-- PLAYER STATISTICS -->
+        <div class="row">
+          <div class="col-4">
+            <h2>Total Score:</h2>
+            <h3 id="totalScore">0</h3>
+          </div>
+          <div class="col-4">
+            <h2>Word Score:</h2>
+            <h3 id="wordScore">0</h3>
+          </div>
+          <div class="col-4">
+            <h3>Remaining Tiles:</h3>
+            <h4 id="tilesRemaining">91</h4>
+          </div>
+        </div>
+        <div id="board"></div>
+        <div id="rack"></div>
+        <hr />
+        <!-- BUTTONS  -->
+        <p>
+          <button
+            type="submit"
+            class="btn btn-success"
+            name="button"
+            id="submitButton"
+          >
+            Submit Word
+          </button>
+
+          <button
+            type="reset"
+            class="btn btn-danger"
+            name="button"
+            id="resetButton"
+          >
+            Restart Game
+          </button>
+        </p>
+      </div>
+    </div>
+
+    <!-- JavaScript Libraries + Files  -->
+
+    <!-- 1. jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- 2. jQuery Validate -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
+
+    <!-- 3. jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- 4. Bootstrap -->
+    <script src="../../js/bootstrap.min.js"></script>
+
+    <!-- 5. Homework 8: Main -->
+    <script src="../../js/hw8.js"></script>
+
+    <!-- 6. Homework 8: Tiles -->
+    <script src="../../js/hw8_tiles.js"></script>
+  </body>
+</html>
