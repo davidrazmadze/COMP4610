@@ -201,9 +201,8 @@ function handleDropEvent(_event, ui) {
   const letterValue = tileObject.value;
 
   // TODO: Check to see if elements are placed next to each other
-  // const boardIndex = wordID[4];
-  // currentWordArray[boardIndex] = letter;
-  // console.log(currentWordArray);
+  const boardIndex = wordID[4];
+  currentWordArray[boardIndex] = letter;
 
   // Disable further dragging
   $(`#${tileID}`).draggable({ disabled: true });
