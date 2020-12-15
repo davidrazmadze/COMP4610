@@ -1,0 +1,34 @@
+/*
+	File: ~/djrazmad/css/hw8.css
+	COMP.4610 Assignment: Multiplication Table
+	David Razmadze, UMass Lowell Computer Science, david_razmadze@student.uml.edu
+	Brief Description: This webpage simulates a shortened version of Scrabble.
+	updated by DJR on December 15, 2020 at 11:00 AM
+*/
+#rack,
+#board {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 100px;
+  justify-content: center;
+}
+
+#board {
+  background-color: #bab89d;
+  width: 725px;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+#rack {
+  background-color: #bab89d;
+  width: 700px;
+  border-color: white;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
+  margin-top: 40px;
+}
